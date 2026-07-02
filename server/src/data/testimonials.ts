@@ -1,0 +1,28 @@
+import type { Testimonial } from '../types/index.js'
+
+export const testimonials: Testimonial[] = [
+  {
+    id: 't1',
+    quote:
+      'MetaTech cut our time-to-insight from weeks to hours. Our analysts finally trust the numbers.',
+    author: 'Amara Okafor',
+    role: 'VP of Data',
+    company: 'Northwind',
+  },
+  {
+    id: 't2',
+    quote:
+      'We replaced four tools with one platform. Onboarding new data sources is genuinely fast now.',
+    author: 'Daniel Reyes',
+    role: 'Head of Analytics',
+    company: 'Lumen Labs',
+  },
+  {
+    id: 't3',
+    quote:
+      'The built-in governance meant our security review passed on the first try.',
+    author: 'Priya Nair',
+    role: 'CTO',
+    company: 'Cobalt',
+  },
+]
