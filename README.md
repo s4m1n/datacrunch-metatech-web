@@ -85,8 +85,3 @@ Responses are static typed JSON (no database, per assessment scope).
 | `npm run dev:server` | Start the API in watch mode |
 | `npm run build` | Type-check and build both apps |
 
-## Status
-
-Phase 1 (project setup) is complete: monorepo, tooling, app shell, routing,
-styling tokens, data layer, and the REST API are wired up and building cleanly.
-UI sections from the Figma design are built next.

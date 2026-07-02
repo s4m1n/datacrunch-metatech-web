@@ -1,21 +1,41 @@
-/**
- * Shared API response contracts.
- * These mirror the shapes served by the Express backend (server/src/types).
- * Keep them in sync — this is the single source of truth for the client.
- */
-
 export interface CtaLink {
   label: string
   href: string
 }
 
+export interface NavLink {
+  label: string
+  href: string
+}
+
+export interface TextSegment {
+  text: string
+  highlight?: boolean
+}
+
+export interface PartnerLogo {
+  id: string
+  name: string
+  logoUrl: string
+}
+
 export interface HomeContent {
+  navigation: {
+    links: NavLink[]
+    cta: CtaLink
+  }
   hero: {
-    eyebrow: string
-    title: string
-    subtitle: string
+    headline: TextSegment[]
+    description: string
     primaryCta: CtaLink
-    secondaryCta?: CtaLink
+  }
+  video: {
+    imageUrl: string
+    overlayText: string
+  }
+  trustedBy: {
+    headline: TextSegment[]
+    logos: PartnerLogo[]
   }
 }
 

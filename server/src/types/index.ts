@@ -8,13 +8,39 @@ export interface CtaLink {
   href: string
 }
 
+export interface NavLink {
+  label: string
+  href: string
+}
+
+export interface TextSegment {
+  text: string
+  highlight?: boolean
+}
+
+export interface PartnerLogo {
+  id: string
+  name: string
+  logoUrl: string
+}
+
 export interface HomeContent {
+  navigation: {
+    links: NavLink[]
+    cta: CtaLink
+  }
   hero: {
-    eyebrow: string
-    title: string
-    subtitle: string
+    headline: TextSegment[]
+    description: string
     primaryCta: CtaLink
-    secondaryCta?: CtaLink
+  }
+  video: {
+    imageUrl: string
+    overlayText: string
+  }
+  trustedBy: {
+    headline: TextSegment[]
+    logos: PartnerLogo[]
   }
 }
 
