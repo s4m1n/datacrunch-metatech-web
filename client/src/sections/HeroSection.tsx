@@ -9,19 +9,19 @@ interface HeroSectionProps {
 
 export function HeroSection({ hero }: HeroSectionProps) {
   return (
-    <section className="pt-8 lg:pt-14">
+    <section className="pt-8 lg:pt-24 lg:px-8">
       <Container>
-        <div className="grid gap-10 lg:grid-cols-[925px_1fr] lg:items-start lg:gap-16">
-          <div className="h-auto w-full max-w-[925px] lg:h-[200px]">
+        <div className="grid gap-10 lg:grid-cols-[664px_1fr] lg:items-start lg:gap-[160px]">
+          <div className="h-auto w-full max-w-[664px] lg:h-[216px]">
             <HighlightText
               as="h1"
               segments={hero.headline}
-              className="text-[48px] leading-[48px] font-extrabold tracking-tighter capitalize sm:text-[56px] sm:leading-[56px] lg:text-[72px] lg:leading-[72px]"
+              className="text-[48px] leading-[48px] font-extrabold tracking-[-0.05em] capitalize sm:text-[56px] sm:leading-[56px] lg:text-[72px] lg:leading-[72px]"
             />
           </div>
 
-          <div className="flex flex-col gap-6 lg:pt-2">
-            <p className="max-w-md text-base leading-relaxed text-muted sm:text-lg">
+          <div className="flex flex-col gap-10 lg:pt-8">
+            <p className="h-auto w-full max-w-[388px] font-body text-[16px] leading-[23px] font-light tracking-normal lg:h-[92px]">
               {hero.description}
             </p>
             <div>

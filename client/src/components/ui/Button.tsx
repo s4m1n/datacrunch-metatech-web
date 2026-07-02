@@ -8,11 +8,14 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode
 }
 
+const baseClasses =
+  'inline-flex items-center justify-center gap-[10px] font-body transition-colors focus-visible:outline-none focus-visible:ring-2'
+
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    'bg-accent text-bg hover:bg-accent/90 focus-visible:ring-accent/50',
+    'h-[50px] min-w-[160px] w-fit shrink-0 whitespace-nowrap rounded-[15px] px-[35px] py-[10px] bg-accent text-[#161616] text-sm font-semibold hover:bg-accent/90 focus-visible:ring-accent/50',
   secondary:
-    'bg-btn-secondary text-ink backdrop-blur-sm hover:bg-white/20 focus-visible:ring-white/30',
+    'rounded-full px-6 py-3 text-sm font-semibold bg-btn-secondary text-ink backdrop-blur-sm hover:bg-white/20 focus-visible:ring-white/30',
 }
 
 export function Button({
@@ -22,11 +25,7 @@ export function Button({
   children,
   ...props
 }: ButtonProps) {
-  const classes = [
-    'inline-flex items-center justify-center rounded-full px-6 py-3 font-body text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2',
-    variantClasses[variant],
-    className,
-  ].join(' ')
+  const classes = [baseClasses, variantClasses[variant], className].join(' ')
 
   if (href) {
     return (
