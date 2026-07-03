@@ -1,6 +1,6 @@
 import express from 'express'
 import cors from 'cors'
-import { contentRouter } from './routes/content.js'
+import { apiRouter } from './routes/index.js'
 import { errorHandler, notFound } from './middleware/errorHandler.js'
 
 const app = express()
@@ -14,7 +14,7 @@ app.get('/api/health', (_req, res) => {
   res.json({ status: 'ok', uptime: process.uptime() })
 })
 
-app.use('/api', contentRouter)
+app.use('/api', apiRouter)
 
 app.use(notFound)
 app.use(errorHandler)

@@ -27,7 +27,11 @@ export function HomePage() {
 
   return (
     <>
-      <Navbar links={data.navigation.links} cta={data.navigation.cta} />
+      <Navbar
+        links={data.navigation.links}
+        cta={data.navigation.cta}
+        solutionsMenu={data.navigation.solutionsMenu}
+      />
       <HeroSection hero={data.hero} />
       <VideoSection video={data.video} />
       <TrustedBySection trustedBy={data.trustedBy} />

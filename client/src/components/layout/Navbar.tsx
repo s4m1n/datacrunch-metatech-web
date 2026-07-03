@@ -1,12 +1,13 @@
 import { useRef, useState } from 'react'
-import type { NavLink as NavLinkType } from '@/types/api'
+import type { NavLink as NavLinkType, SolutionsMegaMenuItem } from '@/types/api'
 import { Button } from '@/components/ui/Button'
 import { Logo } from '@/components/ui/Logo'
-import { SOLUTIONS, SolutionsMegaMenu } from '@/components/layout/SolutionsMegaMenu'
+import { SolutionsMegaMenu } from '@/components/layout/SolutionsMegaMenu'
 
 interface NavbarProps {
   links: NavLinkType[]
   cta: { label: string; href: string }
+  solutionsMenu: SolutionsMegaMenuItem[]
 }
 
 const navLinkClassName =
@@ -15,7 +16,7 @@ const navLinkClassName =
 const navCtaClassName =
   'font-body !text-[14px] !leading-[24px] !font-extrabold tracking-figma'
 
-export function Navbar({ links, cta }: NavbarProps) {
+export function Navbar({ links, cta, solutionsMenu }: NavbarProps) {
   const [open, setOpen] = useState(false)
   const [solutionsOpen, setSolutionsOpen] = useState(false)
   const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false)
@@ -109,7 +110,7 @@ export function Navbar({ links, cta }: NavbarProps) {
           onMouseEnter={openSolutions}
           onMouseLeave={scheduleCloseSolutions}
         >
-          <SolutionsMegaMenu />
+          <SolutionsMegaMenu items={solutionsMenu} />
         </div>
       </div>
 
@@ -134,7 +135,7 @@ export function Navbar({ links, cta }: NavbarProps) {
                   </button>
                   {mobileSolutionsOpen && (
                     <ul className="mt-3 flex flex-col gap-2 pl-2">
-                      {SOLUTIONS.map((item) => (
+                      {solutionsMenu.map((item) => (
                         <li key={item.id}>
                           <a
                             href={item.href}

@@ -1,29 +1,14 @@
-const SOLUTIONS = [
-  {
-    id: 'custom-software',
-    title: 'Custom Software Development',
-    href: '#custom-software-development',
-    imageUrl: '/images/Custom-Software-Development.png',
-  },
-  {
-    id: 'data-ai',
-    title: 'Data+AI First Innovation',
-    href: '#data-ai-first-innovation',
-    imageUrl: '/images/Data-AI.png',
-  },
-  {
-    id: 'staff-augmentation',
-    title: 'Tech Staff Augmentation',
-    href: '#tech-staff-augmentation',
-    imageUrl: '/images/Tech-Augmentation.png',
-  },
-] as const
+import type { SolutionsMegaMenuItem } from '@/types/api'
 
-export function SolutionsMegaMenu() {
+interface SolutionsMegaMenuProps {
+  items: SolutionsMegaMenuItem[]
+}
+
+export function SolutionsMegaMenu({ items }: SolutionsMegaMenuProps) {
   return (
     <div className="w-full rounded-[25px] bg-nav/95 px-[18px] py-3 shadow-[0_24px_64px_rgba(0,0,0,0.45)] backdrop-blur-md">
       <div className="grid w-full grid-cols-3 gap-3">
-        {SOLUTIONS.map((item) => (
+        {items.map((item) => (
           <a
             key={item.id}
             href={item.href}
@@ -44,5 +29,3 @@ export function SolutionsMegaMenu() {
     </div>
   )
 }
-
-export { SOLUTIONS }

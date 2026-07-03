@@ -13,6 +13,13 @@ export interface NavLink {
   href: string
 }
 
+export interface SolutionsMegaMenuItem {
+  id: string
+  title: string
+  href: string
+  imageUrl: string
+}
+
 export interface TextSegment {
   text: string
   highlight?: boolean
@@ -84,6 +91,7 @@ export interface HomeContent {
   navigation: {
     links: NavLink[]
     cta: CtaLink
+    solutionsMenu: SolutionsMegaMenuItem[]
   }
   hero: {
     headline: TextSegment[]
