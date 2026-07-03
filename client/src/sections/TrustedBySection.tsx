@@ -16,7 +16,7 @@ export function TrustedBySection({ trustedBy }: TrustedBySectionProps) {
             as="h2"
             fontFamily="body"
             segments={trustedBy.headline}
-            className="h-auto w-full max-w-[192px] text-[18px] leading-[20px] font-semibold tracking-[-0.05em] lg:h-[60px]"
+            className="h-auto w-full max-w-[192px] text-[18px] leading-[20px] font-semibold tracking-figma lg:h-[60px]"
           />
 
           <LogoGrid logos={trustedBy.logos} />

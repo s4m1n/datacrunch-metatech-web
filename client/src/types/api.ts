@@ -35,6 +35,29 @@ export interface SolutionTab {
   principles: SolutionPrinciple[]
 }
 
+export interface ShowcaseSlide {
+  id: string
+  brand: string
+  logoUrl: string
+  title: string
+  description: string
+  cta: CtaLink
+  imageUrl: string
+}
+
+export interface TechStackLogo {
+  id: string
+  name: string
+  logoUrl: string
+}
+
+export interface TechStackRow {
+  id: string
+  direction: 'left' | 'right'
+  offset?: boolean
+  logos: TechStackLogo[]
+}
+
 export interface HomeContent {
   navigation: {
     links: NavLink[]
@@ -52,6 +75,15 @@ export interface HomeContent {
   }
   solutions: {
     tabs: SolutionTab[]
+  }
+  showcase: {
+    slides: ShowcaseSlide[]
+  }
+  techStacks: {
+    label: string
+    title: string
+    description: string
+    rows: TechStackRow[]
   }
   video: {
     imageUrl: string

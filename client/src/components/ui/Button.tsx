@@ -1,6 +1,6 @@
 import type { ButtonHTMLAttributes, ReactNode } from 'react'
 
-type ButtonVariant = 'primary' | 'secondary' | 'dark'
+type ButtonVariant = 'primary' | 'secondary' | 'dark' | 'outline'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant
@@ -18,6 +18,8 @@ const variantClasses: Record<ButtonVariant, string> = {
     'rounded-full px-6 py-3 text-sm font-semibold bg-btn-secondary text-ink backdrop-blur-sm hover:bg-white/20 focus-visible:ring-white/30',
   dark:
     'h-[40px] w-fit shrink-0 whitespace-nowrap rounded-full bg-[#161616] px-6 text-sm font-semibold text-white hover:bg-[#161616]/90 focus-visible:ring-[#161616]/40',
+  outline:
+    'h-[40px] w-fit shrink-0 whitespace-nowrap rounded-full border border-white px-6 text-sm font-semibold text-white hover:bg-white/10 focus-visible:ring-white/40',
 }
 
 export function Button({

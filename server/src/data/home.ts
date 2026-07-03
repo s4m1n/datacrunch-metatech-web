@@ -116,6 +116,73 @@ export const home: HomeContent = {
       },
     ],
   },
+  showcase: {
+    slides: [
+      {
+        id: 'amicredible',
+        brand: 'AmICredible',
+        logoUrl: '/logos/AmiCredible-Logo.png',
+        title: 'An AI-powered credibility checking platform',
+        description:
+          'that helps users verify claims, analyze sources, and make informed decisions with Quick Check, Deep Check, and Image Check features.',
+        cta: { label: 'Explore more →', href: '#amicredible' },
+        imageUrl: '/images/AmiCredible.png',
+      },
+    ],
+  },
+  techStacks: {
+    label: 'Tech Stacks / >',
+    title: 'Built With Modern Technologies',
+    description:
+      'We use modern, reliable technologies to design, build, and scale high-performance software systems. Our team works with proven tools to deliver secure, scalable, production-ready solutions.',
+    rows: [
+      {
+        id: 'frontend',
+        direction: 'left',
+        logos: [
+          { id: 'react', name: 'React', logoUrl: '/logos/React-Logo.png' },
+          { id: 'nextjs', name: 'Next.js', logoUrl: '/logos/Nextjs-logo.png' },
+          {
+            id: 'tailwind',
+            name: 'Tailwind CSS',
+            logoUrl: '/logos/tailwind_css-logo.png',
+          },
+          {
+            id: 'typescript',
+            name: 'TypeScript',
+            logoUrl: '/logos/TypeScript-logo.png',
+          },
+          { id: 'angular', name: 'Angular', logoUrl: '/logos/angular-3-logo.png' },
+          { id: 'vue', name: 'Vue.js', logoUrl: '/logos/vuejs-logo.png' },
+        ],
+      },
+      {
+        id: 'backend',
+        direction: 'right',
+        offset: true,
+        logos: [
+          { id: 'go', name: 'Go', logoUrl: '/logos/Go_logo.png' },
+          { id: 'python', name: 'Python', logoUrl: '/logos/Python_logo.png' },
+          { id: 'nodejs', name: 'Node.js', logoUrl: '/logos/Node.js_logo.png' },
+          { id: 'dotnet', name: '.NET', logoUrl: '/logos/NET-Framework-logo.png' },
+          { id: 'ruby', name: 'Ruby', logoUrl: '/logos/Ruby-logo.png' },
+          { id: 'php', name: 'PHP', logoUrl: '/logos/PHP-logo.png' },
+        ],
+      },
+      {
+        id: 'platform',
+        direction: 'left',
+        logos: [
+          { id: 'django', name: 'Django', logoUrl: '/logos/django-logo.png' },
+          { id: 'laravel', name: 'Laravel', logoUrl: '/logos/Laravel-logo.png' },
+          { id: 'flutter', name: 'Flutter', logoUrl: '/logos/Google-flutter-logo.png' },
+          { id: 'mysql', name: 'MySQL', logoUrl: '/logos/MySQL-logo.png' },
+          { id: 'mongodb', name: 'MongoDB', logoUrl: '/logos/MongoDB_logo.png' },
+          { id: 'html5', name: 'HTML5', logoUrl: '/logos/HTML5-logo.png' },
+        ],
+      },
+    ],
+  },
   video: {
     imageUrl: '/images/Hero-Banner.png',
     overlayText: 'METATECH',

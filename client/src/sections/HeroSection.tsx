@@ -16,7 +16,7 @@ export function HeroSection({ hero }: HeroSectionProps) {
             <HighlightText
               as="h1"
               segments={hero.headline}
-              className="text-[48px] leading-[48px] font-extrabold tracking-[-0.05em] capitalize sm:text-[56px] sm:leading-[56px] lg:text-[72px] lg:leading-[72px]"
+              className="text-[48px] leading-[48px] font-extrabold tracking-figma capitalize sm:text-[56px] sm:leading-[56px] lg:text-[72px] lg:leading-[72px]"
             />
           </div>
 

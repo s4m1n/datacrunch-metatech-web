@@ -11,9 +11,13 @@
   --color-border: rgba(255, 255, 255, 0.12);
   --color-btn-secondary: rgba(255, 255, 255, 0.14);
   --color-section-light: #eef1f4;
+  --color-showcase: #17a955;
 
   --font-heading: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;
   --font-body: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+
+  --tracking-figma: -0.05em;
+  --tracking-figma-subtle: -0.03em;
 
   --radius-pill: 9999px;
   --radius-card: 24px;
@@ -50,4 +54,37 @@ p,
 button,
 a {
   font-family: var(--font-body);
+}
+
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee-left {
+  animation: marquee-left 45s linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marquee-right 45s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-left,
+  .animate-marquee-right {
+    animation: none;
+  }
 }

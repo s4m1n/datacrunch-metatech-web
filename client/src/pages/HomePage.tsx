@@ -3,7 +3,9 @@ import { PageError } from '@/components/ui/PageError'
 import { PageLoader } from '@/components/ui/PageLoader'
 import { useHome } from '@/hooks/useHome'
 import { HeroSection } from '@/sections/HeroSection'
+import { ShowcaseSection } from '@/sections/ShowcaseSection'
 import { SolutionsSection } from '@/sections/SolutionsSection'
+import { TechStacksSection } from '@/sections/TechStacksSection'
 import { TrustedBySection } from '@/sections/TrustedBySection'
 import { VideoSection } from '@/sections/VideoSection'
 import { WeAreSection } from '@/sections/WeAreSection'
@@ -30,6 +32,8 @@ export function HomePage() {
       <TrustedBySection trustedBy={data.trustedBy} />
       <WeAreSection weAre={data.weAre} />
       <SolutionsSection solutions={data.solutions} />
+      <ShowcaseSection showcase={data.showcase} />
+      <TechStacksSection techStacks={data.techStacks} />
     </>
   )
 }

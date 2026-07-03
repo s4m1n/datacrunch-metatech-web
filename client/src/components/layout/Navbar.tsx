@@ -10,10 +10,10 @@ interface NavbarProps {
 }
 
 const navLinkClassName =
-  'font-body text-[14px] leading-[24px] font-bold tracking-[-0.05em] text-ink/90 transition-colors duration-300 hover:text-accent'
+  'font-body text-[14px] leading-[24px] font-bold tracking-figma text-ink/90 transition-colors duration-300 hover:text-accent'
 
 const navCtaClassName =
-  'font-body !text-[14px] !leading-[24px] !font-extrabold tracking-[-0.05em]'
+  'font-body !text-[14px] !leading-[24px] !font-extrabold tracking-figma'
 
 export function Navbar({ links, cta }: NavbarProps) {
   const [open, setOpen] = useState(false)
