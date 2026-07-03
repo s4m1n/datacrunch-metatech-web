@@ -1,4 +1,5 @@
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
+import { useUI } from '@/app/context/UIContext'
 import type { NavLink as NavLinkType, SolutionsMegaMenuItem } from '@/types/api'
 import { Button } from '@/components/ui/Button'
 import { Logo } from '@/components/ui/Logo'
@@ -17,24 +18,30 @@ const navCtaClassName =
   'font-body !text-[14px] !leading-[24px] !font-extrabold tracking-figma'
 
 export function Navbar({ links, cta, solutionsMenu }: NavbarProps) {
-  const [open, setOpen] = useState(false)
-  const [solutionsOpen, setSolutionsOpen] = useState(false)
-  const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false)
+  const {
+    isMobileNavOpen,
+    toggleMobileNav,
+    closeMobileNav,
+    isMobileSolutionsOpen,
+    toggleMobileSolutions,
+    isSolutionsMegaMenuOpen,
+    setSolutionsMegaMenuOpen,
+  } = useUI()
   const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   const openSolutions = () => {
     if (closeTimerRef.current) clearTimeout(closeTimerRef.current)
-    setSolutionsOpen(true)
+    setSolutionsMegaMenuOpen(true)
   }
 
   const scheduleCloseSolutions = () => {
-    closeTimerRef.current = setTimeout(() => setSolutionsOpen(false), 180)
+    closeTimerRef.current = setTimeout(() => setSolutionsMegaMenuOpen(false), 180)
   }
 
   return (
     <header className="sticky top-0 z-50 overflow-visible">
       <div className="relative mx-auto w-full max-w-[1400px]">
-        <div className="flex h-[80px] items-center gap-[10px] lg:rounded-[25px] rounded-[5px] bg-nav/90 px-[20px] py-[15px] backdrop-blur-md">
+        <div className="flex h-[80px] items-center gap-[10px] rounded-[5px] bg-nav/90 px-[20px] py-[15px] backdrop-blur-md lg:rounded-[25px]">
           <a href="/" aria-label="MetaTech home" className="shrink-0">
             <Logo />
           </a>
@@ -53,9 +60,9 @@ export function Navbar({ links, cta, solutionsMenu }: NavbarProps) {
                 >
                   <a
                     href={link.href}
-                    aria-expanded={solutionsOpen}
+                    aria-expanded={isSolutionsMegaMenuOpen}
                     className={`${navLinkClassName} ${
-                      solutionsOpen ? 'text-accent' : ''
+                      isSolutionsMegaMenuOpen ? 'text-accent' : ''
                     }`}
                   >
                     {link.label}
@@ -77,14 +84,14 @@ export function Navbar({ links, cta, solutionsMenu }: NavbarProps) {
 
           <button
             type="button"
-            aria-label={open ? 'Close menu' : 'Open menu'}
-            aria-expanded={open}
+            aria-label={isMobileNavOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isMobileNavOpen}
             className="ml-auto inline-flex size-10 shrink-0 items-center justify-center rounded-lg text-ink lg:hidden"
-            onClick={() => setOpen((prev) => !prev)}
+            onClick={toggleMobileNav}
           >
             <span className="sr-only">Menu</span>
             <svg viewBox="0 0 24 24" className="size-6" aria-hidden="true">
-              {open ? (
+              {isMobileNavOpen ? (
                 <path
                   fill="currentColor"
                   d="M6.225 4.811 4.811 6.225 10.586 12l-5.775 5.775 1.414 1.414L12 13.414l5.775 5.775 1.414-1.414L13.414 12l5.775-5.775-1.414-1.414L12 10.586z"
@@ -100,13 +107,13 @@ export function Navbar({ links, cta, solutionsMenu }: NavbarProps) {
         </div>
 
         <div
-          aria-hidden={!solutionsOpen}
+          aria-hidden={!isSolutionsMegaMenuOpen}
           className={`absolute inset-x-0 top-[80px] z-50 hidden pt-[6px] transition-[opacity,transform,visibility] duration-300 ease-out lg:block ${
-            solutionsOpen
+            isSolutionsMegaMenuOpen
               ? 'visible translate-y-0 opacity-100'
               : 'invisible translate-y-3 opacity-0'
           }`}
-          style={{ pointerEvents: solutionsOpen ? 'auto' : 'none' }}
+          style={{ pointerEvents: isSolutionsMegaMenuOpen ? 'auto' : 'none' }}
           onMouseEnter={openSolutions}
           onMouseLeave={scheduleCloseSolutions}
         >
@@ -114,7 +121,7 @@ export function Navbar({ links, cta, solutionsMenu }: NavbarProps) {
         </div>
       </div>
 
-      {open && (
+      {isMobileNavOpen && (
         <nav
           aria-label="Mobile"
           className="mx-auto mt-2 max-w-[1400px] rounded-[25px] border border-border bg-nav px-[20px] py-[15px] lg:hidden"
@@ -125,22 +132,22 @@ export function Navbar({ links, cta, solutionsMenu }: NavbarProps) {
                 <li key={link.href}>
                   <button
                     type="button"
-                    aria-expanded={mobileSolutionsOpen}
+                    aria-expanded={isMobileSolutionsOpen}
                     className={`block w-full text-left ${navLinkClassName} ${
-                      mobileSolutionsOpen ? 'text-accent' : ''
+                      isMobileSolutionsOpen ? 'text-accent' : ''
                     }`}
-                    onClick={() => setMobileSolutionsOpen((prev) => !prev)}
+                    onClick={toggleMobileSolutions}
                   >
                     {link.label}
                   </button>
-                  {mobileSolutionsOpen && (
+                  {isMobileSolutionsOpen && (
                     <ul className="mt-3 flex flex-col gap-2 pl-2">
                       {solutionsMenu.map((item) => (
                         <li key={item.id}>
                           <a
                             href={item.href}
                             className="block font-body text-sm font-semibold text-accent"
-                            onClick={() => setOpen(false)}
+                            onClick={closeMobileNav}
                           >
                             {item.title}
                           </a>
@@ -154,7 +161,7 @@ export function Navbar({ links, cta, solutionsMenu }: NavbarProps) {
                   <a
                     href={link.href}
                     className={`block ${navLinkClassName}`}
-                    onClick={() => setOpen(false)}
+                    onClick={closeMobileNav}
                   >
                     {link.label}
                   </a>

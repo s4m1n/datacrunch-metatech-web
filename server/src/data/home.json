@@ -3,15 +3,15 @@
     "links": [
       {
         "label": "Solutions",
-        "href": "#solutions"
+        "href": "solutions"
       },
       {
         "label": "Showcase",
-        "href": "#showcase"
+        "href": "showcase"
       },
       {
         "label": "Contact",
-        "href": "#contact"
+        "href": "contact"
       }
     ],
     "cta": {
@@ -22,19 +22,19 @@
       {
         "id": "custom-software",
         "title": "Custom Software Development",
-        "href": "#custom-software-development",
+        "href": "custom-software-development",
         "imageUrl": "/images/Custom-Software-Development.png"
       },
       {
         "id": "data-ai",
         "title": "Data+AI First Innovation",
-        "href": "#data-ai-first-innovation",
+        "href": "data-ai-first-innovation",
         "imageUrl": "/images/Data-AI.png"
       },
       {
         "id": "staff-augmentation",
         "title": "Tech Staff Augmentation",
-        "href": "#tech-staff-augmentation",
+        "href": "tech-staff-augmentation",
         "imageUrl": "/images/Tech-Augmentation.png"
       }
     ]
@@ -77,7 +77,7 @@
         "description": "Our Data and AI services combine engineering, analytics, and applied AI to help organizations understand data, predict outcomes, and automate decisions. From trusted analytics to production grade AI systems, we deliver intelligence that works in the real world.",
         "cta": {
           "label": "Book a consultation",
-          "href": "#consultation"
+          "href": "consultation"
         },
         "principles": [
           {
@@ -105,7 +105,7 @@
         "description": "Our custom software services combine product engineering, platform architecture, and delivery excellence to help organizations build scalable applications. From discovery to production deployment, we deliver software that performs in the real world.",
         "cta": {
           "label": "Book a consultation",
-          "href": "#consultation"
+          "href": "consultation"
         },
         "principles": [
           {
@@ -133,7 +133,7 @@
         "description": "Our tech staffing services combine elite talent sourcing, team integration, and delivery leadership to help organizations scale engineering capacity. From specialized roles to full squad augmentation, we deliver talent that integrates in the real world.",
         "cta": {
           "label": "Book a consultation",
-          "href": "#consultation"
+          "href": "consultation"
         },
         "principles": [
           {
@@ -165,7 +165,7 @@
         "description": "that helps users verify claims, analyze sources, and make informed decisions with Quick Check, Deep Check, and Image Check features.",
         "cta": {
           "label": "Explore more →",
-          "href": "#amicredible"
+          "href": "amicredible"
         },
         "imageUrl": "/images/AmiCredible.png"
       }

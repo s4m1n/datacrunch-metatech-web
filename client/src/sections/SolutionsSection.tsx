@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useUI } from '@/app/context/UIContext'
 import type { HomeContent } from '@/types/api'
 import { Button } from '@/components/ui/Button'
 import { Container } from '@/components/ui/Container'
@@ -8,8 +8,8 @@ interface SolutionsSectionProps {
 }
 
 export function SolutionsSection({ solutions }: SolutionsSectionProps) {
-  const [activeIndex, setActiveIndex] = useState(0)
-  const activeTab = solutions.tabs[activeIndex]
+  const { activeSolutionTabIndex, setActiveSolutionTabIndex } = useUI()
+  const activeTab = solutions.tabs[activeSolutionTabIndex]
 
   return (
     <section
@@ -25,7 +25,7 @@ export function SolutionsSection({ solutions }: SolutionsSectionProps) {
               className="inline-flex w-max flex-nowrap gap-1 rounded-full bg-white p-1.5"
             >
             {solutions.tabs.map((tab, index) => {
-              const isActive = index === activeIndex
+              const isActive = index === activeSolutionTabIndex
 
               return (
                 <button
@@ -34,8 +34,8 @@ export function SolutionsSection({ solutions }: SolutionsSectionProps) {
                   type="button"
                   role="tab"
                   aria-selected={isActive}
-                  onClick={() => setActiveIndex(index)}
-                  className={`shrink-0 whitespace-nowrap rounded-full px-5 py-2.5 font-body text-[14px] leading-[24px] font-semibold tracking-figma transition-colors duration-300 sm:px-6 ${
+                  onClick={() => setActiveSolutionTabIndex(index)}
+                  className={`shrink-0 whitespace-nowrap rounded-full px-5 py-2.5 font-body text-[14px] leading-[24px] font-semibold tracking-figma transition-colors duration-300 sm:px-6 cursor-pointer ${
                     isActive
                       ? 'bg-[#161616] text-accent'
                       : 'text-[#161616] hover:text-[#161616]/70'

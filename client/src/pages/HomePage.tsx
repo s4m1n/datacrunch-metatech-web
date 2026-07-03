@@ -32,13 +32,15 @@ export function HomePage() {
         cta={data.navigation.cta}
         solutionsMenu={data.navigation.solutionsMenu}
       />
-      <HeroSection hero={data.hero} />
-      <VideoSection video={data.video} />
-      <TrustedBySection trustedBy={data.trustedBy} />
-      <WeAreSection weAre={data.weAre} />
-      <SolutionsSection solutions={data.solutions} />
-      <ShowcaseSection showcase={data.showcase} />
-      <TechStacksSection techStacks={data.techStacks} />
+      <main>
+        <HeroSection hero={data.hero} />
+        <VideoSection video={data.video} />
+        <TrustedBySection trustedBy={data.trustedBy} />
+        <WeAreSection weAre={data.weAre} />
+        <SolutionsSection solutions={data.solutions} />
+        <ShowcaseSection showcase={data.showcase} />
+        <TechStacksSection techStacks={data.techStacks} />
+      </main>
       <Footer footer={data.footer} />
     </>
   )

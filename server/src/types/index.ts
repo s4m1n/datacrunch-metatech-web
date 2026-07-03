@@ -1,8 +1,3 @@
-/**
- * API response contracts served by the backend.
- * Mirror of client/src/types/api.ts — keep the two in sync.
- */
-
 export interface CtaLink {
   label: string
   href: string
