@@ -10,6 +10,7 @@
   --color-muted: rgba(255, 255, 255, 0.72);
   --color-border: rgba(255, 255, 255, 0.12);
   --color-btn-secondary: rgba(255, 255, 255, 0.14);
+  --color-section-light: #eef1f4;
 
   --font-heading: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;
   --font-body: 'Manrope', ui-sans-serif, system-ui, sans-serif;

@@ -24,6 +24,22 @@ export interface PartnerLogo {
   logoUrl: string
 }
 
+export interface SolutionPrinciple {
+  id: string
+  title: string
+  description: string
+}
+
+export interface SolutionTab {
+  id: string
+  label: string
+  index: string
+  title: string
+  description: string
+  cta: CtaLink
+  principles: SolutionPrinciple[]
+}
+
 export interface HomeContent {
   navigation: {
     links: NavLink[]
@@ -33,6 +49,14 @@ export interface HomeContent {
     headline: TextSegment[]
     description: string
     primaryCta: CtaLink
+  }
+  weAre: {
+    label: string
+    lead: string
+    body: string
+  }
+  solutions: {
+    tabs: SolutionTab[]
   }
   video: {
     imageUrl: string

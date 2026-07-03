@@ -11,7 +11,7 @@ export function TrustedBySection({ trustedBy }: TrustedBySectionProps) {
   return (
     <section className="pb-20 lg:pb-28">
       <Container>
-        <div className="grid gap-10 lg:grid-cols-[192px_1fr] lg:items-start lg:gap-16">
+        <div className="grid gap-10 lg:grid-cols-[400px_1fr] lg:items-start lg:gap-16">
           <HighlightText
             as="h2"
             fontFamily="body"

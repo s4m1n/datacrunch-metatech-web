@@ -3,8 +3,10 @@ import { PageError } from '@/components/ui/PageError'
 import { PageLoader } from '@/components/ui/PageLoader'
 import { useHome } from '@/hooks/useHome'
 import { HeroSection } from '@/sections/HeroSection'
+import { SolutionsSection } from '@/sections/SolutionsSection'
 import { TrustedBySection } from '@/sections/TrustedBySection'
 import { VideoSection } from '@/sections/VideoSection'
+import { WeAreSection } from '@/sections/WeAreSection'
 
 export function HomePage() {
   const { data, isLoading, isError, error, refetch } = useHome()
@@ -26,6 +28,8 @@ export function HomePage() {
       <HeroSection hero={data.hero} />
       <VideoSection video={data.video} />
       <TrustedBySection trustedBy={data.trustedBy} />
+      <WeAreSection weAre={data.weAre} />
+      <SolutionsSection solutions={data.solutions} />
     </>
   )
 }
