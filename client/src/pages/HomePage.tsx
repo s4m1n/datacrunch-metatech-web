@@ -1,3 +1,4 @@
+import { Footer } from '@/components/layout/Footer'
 import { Navbar } from '@/components/layout/Navbar'
 import { PageError } from '@/components/ui/PageError'
 import { PageLoader } from '@/components/ui/PageLoader'
@@ -34,6 +35,7 @@ export function HomePage() {
       <SolutionsSection solutions={data.solutions} />
       <ShowcaseSection showcase={data.showcase} />
       <TechStacksSection techStacks={data.techStacks} />
+      <Footer footer={data.footer} />
     </>
   )
 }

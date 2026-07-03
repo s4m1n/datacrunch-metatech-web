@@ -212,4 +212,22 @@ export const home: HomeContent = {
       },
     ],
   },
+  footer: {
+    copyright: {
+      yearStart: 2022,
+      yearEnd: 2026,
+      companyName: 'MetaTech LLC',
+      rightsText: 'All Rights Reserved',
+    },
+    legalLinks: [
+      { id: 'terms', label: 'Terms of Use', href: '/terms' },
+      { id: 'privacy', label: 'Privacy Policy', href: '/privacy' },
+    ],
+    socialLinks: [
+      { id: 'facebook', label: 'Facebook', href: 'https://facebook.com' },
+      { id: 'linkedin', label: 'Linkedin', href: 'https://linkedin.com' },
+      { id: 'instagram', label: 'Instagram', href: 'https://instagram.com' },
+      { id: 'youtube', label: 'Youtube', href: 'https://youtube.com' },
+    ],
+  },
 }

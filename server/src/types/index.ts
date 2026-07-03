@@ -63,6 +63,23 @@ export interface TechStackRow {
   logos: TechStackLogo[]
 }
 
+export interface FooterLink {
+  id: string
+  label: string
+  href: string
+}
+
+export interface FooterContent {
+  copyright: {
+    yearStart: number
+    yearEnd: number
+    companyName: string
+    rightsText: string
+  }
+  legalLinks: FooterLink[]
+  socialLinks: FooterLink[]
+}
+
 export interface HomeContent {
   navigation: {
     links: NavLink[]
@@ -98,6 +115,7 @@ export interface HomeContent {
     headline: TextSegment[]
     logos: PartnerLogo[]
   }
+  footer: FooterContent
 }
 
 export interface Feature {

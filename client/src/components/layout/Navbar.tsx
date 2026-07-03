@@ -33,7 +33,7 @@ export function Navbar({ links, cta }: NavbarProps) {
   return (
     <header className="sticky top-0 z-50 overflow-visible">
       <div className="relative mx-auto w-full max-w-[1400px]">
-        <div className="flex h-[80px] items-center gap-[10px] rounded-[25px] bg-nav/90 px-[20px] py-[15px] backdrop-blur-md">
+        <div className="flex h-[80px] items-center gap-[10px] lg:rounded-[25px] rounded-[5px] bg-nav/90 px-[20px] py-[15px] backdrop-blur-md">
           <a href="/" aria-label="MetaTech home" className="shrink-0">
             <Logo />
           </a>

@@ -7,7 +7,7 @@ interface WeAreSectionProps {
 
 export function WeAreSection({ weAre }: WeAreSectionProps) {
   return (
-    <section className="-mx-[20px] w-[calc(100%+40px)] bg-white py-16 text-[#161616] lg:py-24">
+    <section className="-mx-5 w-[calc(100%+40px)] bg-white py-16 text-[#161616] lg:py-24">
       <Container>
         <div className="grid gap-8 lg:grid-cols-[412px_1fr] lg:items-start lg:gap-16">
           <p className="ml-[20px] font-body text-[18px] leading-[30px] font-semibold tracking-figma">
