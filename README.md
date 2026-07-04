@@ -120,6 +120,7 @@ Content is served from static JSON files in `server/src/data/`. No database or a
 | `npm run dev:client` | Start the Vite development server |
 | `npm run dev:server` | Start the API in watch mode |
 | `npm run build` | Type-check and build both applications |
+| `npm run test` | Run client unit and component tests (Vitest + RTL) |
 
 ## Assumptions
 

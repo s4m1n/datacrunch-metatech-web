@@ -9,7 +9,7 @@ export function toVideoEmbedUrl(url: string): {
   if (youtubeIdMatch) {
     return {
       type: 'iframe',
-      src: `https://www.youtube.com/embed/JnX7Oc8LqD8?autoplay=1&rel=0`,
+      src: `https://www.youtube.com/embed/${youtubeIdMatch[1]}?autoplay=1&rel=0`,
     }
   }
 
