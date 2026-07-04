@@ -8,6 +8,10 @@ This project implements the MetaTech homepage across desktop and mobile breakpoi
 
 **Repository:** [github.com/s4m1n/datacrunch-metatech-web](https://github.com/s4m1n/datacrunch-metatech-web)
 
+**Live demo:** [datacrunch-metatech-web.vercel.app](https://datacrunch-metatech-web.vercel.app)
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/s4m1n/datacrunch-metatech-web)
+
 ## Tech Stack
 
 | Layer | Technology |
@@ -121,6 +125,26 @@ Content is served from static JSON files in `server/src/data/`. No database or a
 | `npm run dev:server` | Start the API in watch mode |
 | `npm run build` | Type-check and build both applications |
 | `npm run test` | Run client unit and component tests (Vitest + RTL) |
+
+## Deployment (Vercel)
+
+The client and API deploy together on Vercel: the React app is served as static files and the Express API runs as a serverless function at `/api/*`.
+
+1. Push the repo to GitHub.
+2. Import the project in [Vercel](https://vercel.com/new) (or click **Deploy with Vercel** above).
+3. Use the default settings from `vercel.json` — no extra env vars are required for a basic deploy.
+4. Optional env vars:
+
+| Variable | Description |
+| --- | --- |
+| `CLIENT_ORIGIN` | Allowed CORS origin (defaults include localhost and `*.vercel.app`) |
+| `VITE_API_BASE_URL` | Client API base URL at build time (defaults to `/api`) |
+
+```bash
+# Deploy from the CLI
+npx vercel          # preview
+npx vercel --prod   # production
+```
 
 ## Assumptions
 
