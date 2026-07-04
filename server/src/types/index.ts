@@ -113,6 +113,8 @@ export interface HomeContent {
   video: {
     imageUrl: string
     overlayText: string
+    title: string
+    videoUrl: string
   }
   trustedBy: {
     headline: TextSegment[]

@@ -288,8 +288,10 @@
     ]
   },
   "video": {
-    "imageUrl": "/images/Hero-Banner.png",
-    "overlayText": "METATECH"
+    "imageUrl": "/images/video-thumbnail.png",
+    "overlayText": "METATECH",
+    "title": "MetaTech Overview",
+    "videoUrl": "https://www.youtube.com/watch?v=LXb3EKDiInQ"
   },
   "trustedBy": {
     "headline": [
